@@ -1,6 +1,10 @@
-import os
+import requests
 
-print("PJN_USER:", bool(os.getenv("PJN_USER")))
-print("PJN_PASSWORD:", bool(os.getenv("PJN_PASSWORD")))
-print("TELEGRAM_BOT_TOKEN:", bool(os.getenv("TELEGRAM_BOT_TOKEN")))
-print("TELEGRAM_CHAT_ID:", bool(os.getenv("TELEGRAM_CHAT_ID")))
+r = requests.get(
+    "https://portalpjn.pjn.gov.ar/inicio",
+    timeout=30
+)
+
+print("STATUS:", r.status_code)
+print("URL:", r.url)
+print("LENGTH:", len(r.text))
