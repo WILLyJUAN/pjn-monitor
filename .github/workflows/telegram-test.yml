@@ -16,7 +16,9 @@ jobs:
 
       - run: pip install -r requirements.txt
 
-      - run: python monitor.py
+            - run: python monitor.py
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          PJN_USER: ${{ secrets.PJN_USER }}
+          PJN_PASSWORD: ${{ secrets.PJN_PASSWORD }}
