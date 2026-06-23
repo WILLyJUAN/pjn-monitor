@@ -1,16 +1,6 @@
 import os
-import requests
 
-BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
-CHAT_ID = os.environ["TELEGRAM_CHAT_ID"]
-
-r = requests.post(
-    f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
-    json={
-        "chat_id": CHAT_ID,
-        "text": "Тест PJN Monitor"
-    }
-)
-
-print(r.status_code)
-print(r.text)
+print("PJN_USER:", bool(os.getenv("PJN_USER")))
+print("PJN_PASSWORD:", bool(os.getenv("PJN_PASSWORD")))
+print("TELEGRAM_BOT_TOKEN:", bool(os.getenv("TELEGRAM_BOT_TOKEN")))
+print("TELEGRAM_CHAT_ID:", bool(os.getenv("TELEGRAM_CHAT_ID")))
